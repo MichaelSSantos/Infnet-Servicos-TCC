@@ -14,17 +14,18 @@ import infnet.servicosrest.model.Turma;
 import infnet.servicosrest.service.TurmaService;
 
 @RestController
+@RequestMapping("/turmas")
 public class TurmaResource {
 	
 	@Autowired
 	private TurmaService turmaService;
 	
-	@RequestMapping(value="/turmas", method=RequestMethod.GET)
+	@RequestMapping(method=RequestMethod.GET)
 	public ResponseEntity<List<Turma>> listar(){
 		return new ResponseEntity<List<Turma>>(turmaService.listar(), HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/turmas/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Turma> buscar(@PathVariable("id") Integer id) {
 		Turma turma = turmaService.buscar(id);
 	  if (turma == null) {
