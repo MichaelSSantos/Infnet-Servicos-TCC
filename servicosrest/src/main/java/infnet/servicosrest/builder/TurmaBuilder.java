@@ -133,7 +133,7 @@ public class TurmaBuilder {
 		professor2.setId(2);
 		professor2.setMatricula(221);
 		professor2.setNome("Diego Ritzz");
-		t1.setProfessor(professor2);
+		t2.setProfessor(professor2);
 		
 		Aluno aluno2 = new Aluno();
 		aluno2.setId(1);
@@ -154,7 +154,7 @@ public class TurmaBuilder {
 		professor3.setId(3);
 		professor3.setMatricula(222);
 		professor3.setNome("Thiago Alves");
-		t1.setProfessor(professor3);
+		t3.setProfessor(professor3);
 		
 		Aluno aluno3 = new Aluno();
 		aluno3.setId(3);
