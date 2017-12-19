@@ -14,7 +14,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { AppWebConfiguration.class, JPAConfiguration.class };
+		return new Class[] { AppWebConfiguration.class, JPAConfiguration.class, JPAProductionConfiguration.class };
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	 * SE USAR EM DESENVOLVIMENTO: DEVELOPMENT_NAME
 	 * SE USAR EM PRODUÇÃO: PRODUCTION_NAME
 	 */
-	@Override
+//	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		super.onStartup(servletContext);
 		servletContext.addListener(RequestContextListener.class);
