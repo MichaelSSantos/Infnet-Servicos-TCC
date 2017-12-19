@@ -8,6 +8,8 @@ import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import static infnet.servicosrest.helper.Constantes.*;
+
 public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
@@ -32,11 +34,16 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		return new Filter[] { encodingFilter };
 	}
 
+	/**
+	 * ==== ATENÇÃO ====
+	 * SE USAR EM DESENVOLVIMENTO: DEVELOPMENT_NAME
+	 * SE USAR EM PRODUÇÃO: PRODUCTION_NAME
+	 */
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		super.onStartup(servletContext);
 		servletContext.addListener(RequestContextListener.class);
-		servletContext.setInitParameter("spring.profiles.active", "dev");
+		servletContext.setInitParameter("spring.profiles.active", PRODUCTION_NAME);
 	}
 
 }
