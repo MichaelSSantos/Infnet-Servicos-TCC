@@ -6,7 +6,9 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<c:url value="/" var="contextPath" />
-
+		
+		<link rel="icon" href="${contextPath}resources/images/favicon.png" type="image/png">
+		
 		<title>Serviços - SISAM</title>
 	</head>
 	<body>
