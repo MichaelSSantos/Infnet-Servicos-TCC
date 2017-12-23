@@ -32,69 +32,54 @@ public class TurmaBuilder {
 		pos.setId(1);
 		pos.setDescricao("Pós-graudação");
 		
-		TipoCurso grad = new TipoCurso();
-		grad.setId(2);
-		grad.setDescricao("Graduação");
+//		TipoCurso grad = new TipoCurso();
+//		grad.setId(2);
+//		grad.setDescricao("Graduação");
 		
 		Curso engSoftJava = new Curso();
 		engSoftJava.setId(1);
-		engSoftJava.setNome("Engenharia de Software com Java");
+		engSoftJava.setNome("Eng de Soft Java");
 		engSoftJava.setTipoCurso(pos);
 		
+		Curso arqSoft = new Curso();
+		arqSoft.setId(2);
+		arqSoft.setNome("Arq de Software");
+		arqSoft.setTipoCurso(pos);
+
 		Curso engSoftNet = new Curso();
-		engSoftNet.setId(2);
-		engSoftNet.setNome("Arquitetura de Software com .Net");
+		engSoftNet.setId(3);
+		engSoftNet.setNome("Eng de Soft .Net");
 		engSoftNet.setTipoCurso(pos);
-		
-		/*Curso sisInf = new Curso();
-		sisInf.setId(3);
-		sisInf.setNome("Sistemas de informação");
-		sisInf.setTipoCurso(grad);
-		
-		Curso engComp = new Curso();
-		engComp.setId(4);
-		engComp.setNome("Engenheria da computação");
-		engComp.setTipoCurso(grad);*/
 		
 		Bloco blocoA = new Bloco();
 		blocoA.setId(1);
 		blocoA.setNome("Tecnologia Java");
 		blocoA.setCurso(engSoftJava);
 		
-		/*Bloco blocoB = new Bloco();
+		Bloco blocoB = new Bloco();
 		blocoB.setId(2);
-		blocoB.setNome("Qualidade de software");
-		blocoB.setCurso(sisInf);*/
+		blocoB.setNome("Arquitetura SOA");
+		blocoB.setCurso(arqSoft);
 		
 		Bloco blocoC = new Bloco();
 		blocoC.setId(3);
 		blocoC.setNome("Tecnologia .Net");
 		blocoC.setCurso(engSoftNet);
 		
-		/*Bloco blocoD = new Bloco();
-		blocoD.setId(4);
-		blocoD.setNome("Arquitetura de computadores");
-		blocoD.setCurso(engComp);*/
-		
 		Modulo javaOO = new Modulo();
 		javaOO.setId(1);
 		javaOO.setNome("Java OO");
 		javaOO.setBloco(blocoA);
 		
-		Modulo persistenciaJava = new Modulo();
-		persistenciaJava.setId(2);
-		persistenciaJava.setNome("Persistência Java");
-		persistenciaJava.setBloco(blocoA);
+		Modulo soa = new Modulo();
+		soa.setId(2);
+		soa.setNome("Projeto SOA");
+		soa.setBloco(blocoB);
 		
 		Modulo dotNetOO = new Modulo();
 		dotNetOO.setId(3);
 		dotNetOO.setNome(".Net OO");
 		dotNetOO.setBloco(blocoC);
-		
-		Modulo persistenciaDotNet = new Modulo();
-		persistenciaDotNet.setId(3);
-		persistenciaDotNet.setNome("Persistência .Net");
-		persistenciaDotNet.setBloco(blocoC);
 		
 		Calendar dataInicio = Calendar.getInstance();
 		dataInicio.set(2017, 11, 1);
@@ -127,12 +112,12 @@ public class TurmaBuilder {
 		t2.setDescricao("Turma 2");
 		t2.setDataInicio(dataInicio);
 		t2.setDataFim(dataFim);
-		t2.setModulo(persistenciaJava);
+		t2.setModulo(soa);
 		
 		Professor professor2 = new Professor();
 		professor2.setId(2);
 		professor2.setMatricula(221);
-		professor2.setNome("Diego Ritzz");
+		professor2.setNome("Thiago Costa");
 		t2.setProfessor(professor2);
 		
 		Aluno aluno2 = new Aluno();
